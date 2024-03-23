@@ -16,6 +16,7 @@ public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
 	
+	void HandleDestruction();	
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
@@ -33,7 +34,8 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Super Duper Variables", meta = (AllowPrivateAccess = "true"))
 	int32 EditAnywhereInt = 22;
 
-	
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class UParticleSystem* DeathParticle;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Super Duper Variables")
