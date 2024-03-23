@@ -18,6 +18,9 @@ public:
 	
 	void HandleDestruction();	
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TSubclassOf<class UCameraShakeBase> DeathCameraShakeClass;
+
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	class UCapsuleComponent* CapsuleComp;
@@ -36,6 +39,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	class UParticleSystem* DeathParticle;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class USoundBase* DeathSound;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Super Duper Variables")
